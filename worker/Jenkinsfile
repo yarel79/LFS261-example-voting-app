@@ -30,4 +30,5 @@ pipeline {
             echo 'Building multibrach pipeline for worker is completed..'
         }
     }
+
 }
