@@ -8,7 +8,7 @@ pipeline {
     stages{ 
         stage('build'){ 
             when {
-                 chengeset "**/worker/**"
+                 changeset "**/worker/**"
             } 
             steps{ 
                 echo 'Compiling worker app'
@@ -19,7 +19,7 @@ pipeline {
         } 
         stage('test'){ 
             when {
-                 chengeset "**/worker/**"
+                 changeset "**/worker/**"
             } 
             steps{ 
                 echo 'Running Unit Tests on worker app' 
@@ -31,7 +31,7 @@ pipeline {
         stage('package'){ 
             when {
                  branch 'master'
-                 chengeset "**/worker/**"
+                 changeset "**/worker/**"
             } 
             steps{ 
                 echo 'Packaging worker app'
