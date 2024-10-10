@@ -64,7 +64,7 @@ pipeline {
             echo 'Packagin worker app with docker'
             script {
               docker.withRegistry('https://index.docker.io/v2/','yarel') {
-                def workerImage = docker.build("yarel/worker:v${env.BUIILD_ID}","./worker")
+                def workerImage = docker.build("yarel/worker:v${env.BUILD_ID}","./worker")
                 workerImage.push()
                 workerImage.push("latest")
               }
