@@ -217,7 +217,6 @@
 	      }
 	    }
 
-
 	    stage('deploy to dev') {
 	      agent any
 	      steps {
@@ -233,5 +232,9 @@
 	      echo 'Building mono pipeline for voting app is completed.'
 	    }
 	  }
+
+
+
 	}
+
 
