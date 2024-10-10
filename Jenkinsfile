@@ -75,7 +75,7 @@
 	      steps {
 		echo 'Packaging worker app with docker'
 		script {
-		  docker.withRegistry('', 'dockerlogin') {
+		  docker.withRegistry('', 'yarel') {
 		    def workerImage = docker.build("yarel/worker:v${env.BUILD_ID}", './worker')
 		    workerImage.push()
 		    workerImage.push("${env.BRANCH_NAME}")
@@ -134,7 +134,7 @@
 	      steps {
 		echo 'Packaging result app with docker'
 		script {
-		  docker.withRegistry('', 'dockerlogin') {
+		  docker.withRegistry('', 'yarel') {
 		    def resultImage = docker.build("yarel/result:v${env.BUILD_ID}", './result')
 		    resultImage.push()
 		    resultImage.push("${env.BRANCH_NAME}")
@@ -205,7 +205,7 @@
 	      steps {
 		echo 'Packaging vote app with docker'
 		script {
-		  docker.withRegistry('', 'dockerlogin') {
+		  docker.withRegistry('', 'yarel') {
 		    // ./vote is the path to the Dockerfile that Jenkins will find from the Github repo
 		    def voteImage = docker.build("yarel/vote:${env.GIT_COMMIT}", "./vote")
 		    voteImage.push()
